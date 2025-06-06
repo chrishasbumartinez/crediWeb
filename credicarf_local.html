@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulador de Pago</title>
+</head>
+<body>
+  <h2>Simulador de Credicard</h2>
+  <button onclick="enviarMensaje('payment-success-cc')">Simular Éxito</button>
+  <button onclick="enviarMensaje('payment-fail-cc')">Simular Fallo</button>
+  <button onclick="enviarMensaje('payment-cancelled-cc')">Simular Cancelado</button>
+
+  <script>
+    function enviarMensaje(status) {
+      window.opener?.postMessage({ status }, "*");
+      alert("Mensaje enviado: " + status);
+    }
+  </script>
+</body>
+</html>
